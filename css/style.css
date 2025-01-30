@@ -77,9 +77,9 @@ main {
   align-items: center;
 }
 
-.cta-section a {
+a {
   padding: 6px 20px;
-  margin-left: 10px;
+  margin-right: 10px;
   color: #171717;
   font-size: 1.125rem;
   border: #d2d6db;
@@ -91,17 +91,21 @@ main {
   margin-bottom: 10px;
 }
 
-.cta-section a:nth-last-of-type(1) {
+.button-2 {
   color: #fff;
   background-color: #4338ca;
 }
 
-.cta-section a:nth-last-of-type(1):hover {
+.button-2:hover {
   background-color: #3730a3;
 }
 
-.cta-section a:nth-last-of-type(1):focus {
+.button-2:focus {
   background-color: #3730a3;
+}
+
+.button-2:disabled {
+  background-color: #f9fafb;
 }
 
 @media (min-width: 768px) {
@@ -127,5 +131,10 @@ main {
   h1 {
     font-size: 3.5rem;
     line-height: 3.6rem;
+  }
+
+  .cta-section a {
+    padding: 15px 30px;
+    margin-right: 24px;
   }
 }
