@@ -1,4 +1,21 @@
 :root {
+  --primaryColor: #171717;
+  --secondayColor: #525252;
+
+  --buttonSecondaryColor: #4338ca;
+  --buttonPrimaryColor: #ffffff;
+  --buttonBorderPrimaryColor: #e5e5e5;
+
+  --buttonPrimaryColorHover: #fafafa;
+  --buttonSecondaryColorHover: #3730a3;
+
+  --textButtonDisabledColor: #a3a3a3;
+  --buttonFocusOutlineColor: #f5f5f5;
+
+  --cardBg: #fff;
+
+  --gradientTop: rgba(249, 250, 251, 1);
+  --gradientBottom: rgba(210, 214, 219, 1);
 }
 
 body {
@@ -78,34 +95,46 @@ main {
 }
 
 a {
-  padding: 6px 20px;
-  margin-right: 10px;
-  color: #171717;
-  font-size: 1.125rem;
-  border: #d2d6db;
+  padding: 1em 2em;
+  border-radius: 4px;
   text-decoration: none;
-  background-color: #fff;
-  border-radius: 6px;
-  font-weight: 400;
-  border: 1px solid #d2d6db;
-  margin-bottom: 10px;
+  &hover {
+    border-radius: 3px;
+  }
+  &:disabled {
+    background-color: var(--buttonFocusOutlineColor);
+    color: var(--textButtonDisabledColor);
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+.button-1 {
+  background-color: var(--buttonPrimaryColor);
+  color: var(--primaryColor);
+  border: 1px solid var(--buttonBorderPrimaryColor);
+
+  &:hover {
+    background-color: var(--buttonPrimaryColorHover);
+  }
+  &:focus {
+    outline: 3px solid var(--buttonFocusOutlineColor);
+    background-color: var(--buttonPrimaryColorHover);
+  }
 }
 
 .button-2 {
-  color: #fff;
-  background-color: #4338ca;
-}
+  background-color: var(--buttonSecondaryColor);
+  color: var(--buttonPrimaryColor);
 
-.button-2:hover {
-  background-color: #3730a3;
-}
-
-.button-2:focus {
-  background-color: #3730a3;
-}
-
-.button-2:disabled {
-  background-color: #f9fafb;
+  &:hover {
+    background-color: var(--buttonSecondaryColorHover);
+  }
+  &:focus {
+    outline: 3px solid var(--buttonFocusOutlineColor);
+    background-color: var(--buttonSecondaryColorHover);
+    border-radius: 3px;
+  }
 }
 
 @media (min-width: 768px) {
