@@ -158,11 +158,16 @@ a:disabled {
 /* Responsive Breakpoints */
 @media (min-width: 768px) {
   .hero {
+    margin-top: 100px;
     row-gap: 30px;
   }
 
   h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
+  }
+
+  p {
+    margin-bottom: 80px;
   }
 
   .button {
