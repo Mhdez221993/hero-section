@@ -1,33 +1,32 @@
 :root {
+  /* Primary / Secondary */
   --primaryColor: #171717;
-  --secondayColor: #525252;
+  --secondaryColor: #525252;
 
-  --buttonSecondaryColor: #4338ca;
+  /* Buttons */
   --buttonPrimaryColor: #ffffff;
+  --buttonSecondaryColor: #4338ca;
   --buttonBorderPrimaryColor: #e5e5e5;
 
+  /* Button Hover */
   --buttonPrimaryColorHover: #fafafa;
   --buttonSecondaryColorHover: #3730a3;
 
-  --textButtonDisabledColor: #a3a3a3;
+  /* Button States */
   --buttonFocusOutlineColor: #f5f5f5;
+  --textButtonDisabledColor: #a3a3a3;
 
-  --cardBg: #fff;
-
-  --gradientTop: rgba(249, 250, 251, 1);
-  --gradientBottom: rgba(210, 214, 219, 1);
+  /* Backgrounds */
+  --cardBg: #ffffff;
+  --gradientTop: #f9fafb;
+  --gradientBottom: #d2d6db;
+  /* You can reuse --gradientBottom or define another variable for the hero if desired, e.g. --heroGradientBottom: #edf0f3; */
 }
 
-body {
-  margin: 0;
-  background-image: linear-gradient(#f9fafb, #d2d6db);
-  font-family: "Noto Sans", system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
-    sans-serif;
-  min-height: 100vh;
-}
-
+/* Global Reset */
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -35,29 +34,27 @@ img {
   width: 100%;
 }
 
-h1,
-p,
-a,
-section,
-header,
-div,
-img {
-  margin: 0;
-  padding: 0;
+body {
+  min-height: 100vh;
+  font-family: "Noto Sans", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+  background-image: linear-gradient(var(--gradientTop), var(--gradientBottom));
 }
 
+/* Headings & Text */
 h1 {
   font-size: 2.25rem;
-  color: #171717;
   line-height: 2.5rem;
-  margin-bottom: 24px;
   font-weight: 600;
+  color: var(--primaryColor);
+  margin-bottom: 24px;
 }
 
 p {
   font-size: 1.125rem;
-  list-style: 1.5rem;
-  color: #525252;
+  line-height: 1.5rem;
+  color: var(--secondaryColor);
   margin-bottom: 24px;
 }
 
@@ -67,16 +64,17 @@ main {
   padding: 10px;
 }
 
+/* Hero */
 .hero {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
-  justify-content: center;
   align-items: center;
   row-gap: 50px;
-  background-image: linear-gradient(#f9fafb, #edf0f3);
+  padding: 100px 10px;
   border-radius: 3px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  padding: 100px 10px;
+  /* If you want a different bottom gradient for the hero, adjust it here */
+  background-image: linear-gradient(var(--gradientTop), #edf0f3);
 }
 
 .hero-content {
@@ -88,55 +86,76 @@ main {
   grid-column: 1 / span 12;
 }
 
+/* CTA Section */
 .cta-section {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  /* align-items: center; */
 }
 
+/* Links / Buttons */
 a {
+  text-decoration: none;
   padding: 1em 2em;
   border-radius: 4px;
-  text-decoration: none;
-  &hover {
-    border-radius: 3px;
-  }
-  &:disabled {
-    background-color: var(--buttonFocusOutlineColor);
-    color: var(--textButtonDisabledColor);
-    cursor: not-allowed;
-    pointer-events: none;
-  }
+  transition: background-color 0.2s ease-in-out;
 }
 
+a:hover {
+  border-radius: 4px; /* keep consistent radius on hover */
+}
+
+/* Disabled link styles */
+a:disabled {
+  background-color: var(--buttonFocusOutlineColor);
+  color: var(--textButtonDisabledColor);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Base button styles (optional shared class) */
+.button {
+  border-radius: 4px;
+  border: none;
+  transition: background-color 0.2s ease-in-out;
+  outline-offset: 2px; /* for focus outlines if needed */
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.button:focus {
+  outline: 3px solid var(--buttonFocusOutlineColor);
+}
+
+/* Button Variants */
 .button-1 {
   background-color: var(--buttonPrimaryColor);
   color: var(--primaryColor);
   border: 1px solid var(--buttonBorderPrimaryColor);
+}
 
-  &:hover {
-    background-color: var(--buttonPrimaryColorHover);
-  }
-  &:focus {
-    outline: 3px solid var(--buttonFocusOutlineColor);
-    background-color: var(--buttonPrimaryColorHover);
-  }
+.button-1:hover {
+  background-color: var(--buttonPrimaryColorHover);
+}
+
+.button-1:focus {
+  background-color: var(--buttonPrimaryColorHover);
 }
 
 .button-2 {
   background-color: var(--buttonSecondaryColor);
   color: var(--buttonPrimaryColor);
-
-  &:hover {
-    background-color: var(--buttonSecondaryColorHover);
-  }
-  &:focus {
-    outline: 3px solid var(--buttonFocusOutlineColor);
-    background-color: var(--buttonSecondaryColorHover);
-    border-radius: 3px;
-  }
 }
 
+.button-2:hover {
+  background-color: var(--buttonSecondaryColorHover);
+}
+
+.button-2:focus {
+  background-color: var(--buttonSecondaryColorHover);
+}
+
+/* Responsive Breakpoints */
 @media (min-width: 768px) {
   .hero {
     row-gap: 30px;
@@ -162,7 +181,7 @@ a {
     line-height: 3.6rem;
   }
 
-  .cta-section a {
+  .cta-section > a {
     padding: 15px 30px;
     margin-right: 24px;
   }
