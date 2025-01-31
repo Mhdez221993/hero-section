@@ -195,6 +195,9 @@ a:disabled {
     line-height: 3.6rem;
   }
 
+  p {
+    margin-bottom: 50px;
+
   .cta-section > a {
     padding: 15px 30px;
     margin-right: 24px;
