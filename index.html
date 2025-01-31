@@ -2,17 +2,31 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <!-- Enables responsive behavior on mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Hero Section</title>
+
+    <!-- Basic SEO meta description -->
+    <meta
+      name="description"
+      content="High quality abstract images for your projects, wallpapers, and presentations."
+    />
+
+    <title>Hero Section - Abstract Images</title>
+
+    <!-- Preconnect to speed up Google Fonts fetching -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Import your chosen font with the weights you need -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/style.css" />
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
 
+    <!-- Link to your external CSS (ensure it’s minified for production) -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Favicon -->
     <link rel="icon" href="img/favicon.ico" sizes="any" />
   </head>
   <body>
@@ -21,20 +35,25 @@
         <header class="hero-content">
           <h1>Well crafted abstract images</h1>
           <p>
-            High quality abstract images for your projects, wallpaper and
+            High quality abstract images for your projects, wallpaper, and
             presentations.
           </p>
           <div class="cta-section">
-            <a href="" class="button-1">Learn more</a>
-            <a href="" class="button-2">See pricing</a>
+            <a href="#" class="button button-1">Learn more</a>
+            <a href="#" class="button button-2">See pricing</a>
           </div>
         </header>
         <div class="hero-img">
-          <img src="img/prism.png" alt="hero image">
+          <!-- Make sure to optimize prism.png (compress or choose the right format) -->
+          <img
+            src="img/prism.png"
+            alt="Colorful prism representing abstract art"
+          />
         </div>
       </section>
     </main>
 
-    <script src="js/index.js"></script>
+    <!-- Place scripts at the end of the body, possibly with defer if needed -->
+    <script src="js/index.js" defer></script>
   </body>
 </html>
